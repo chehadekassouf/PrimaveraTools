@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Codebasement.PrintControl</name>
+    </assembly>
+    <members>
+        <member name="T:Codebasement.PrintControl.PrintDocumentForm">
+            <summary>
+            Form encapsulating the PrintDocumentControl
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentForm.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PrintDocumentForm"/> class.
+            </summary>
+            <param name="controlToPrint">The control to print.</param>
+        </member>
+        <member name="F:Codebasement.PrintControl.PrintDocumentForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.PaperKindSelectionConverter">
+            <summary>
+            Type converter returning a specific collection.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperKindSelectionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PaperKindSelectionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperKindSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> should be called to find a common set of values the object supports; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperKindSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exclusive list of possible values, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exhaustive list of possible values; false if other values are possible.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperKindSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+            </returns>
+        </member>
+        <member name="T:Codebasement.PrintControl.TextAlignment">
+            <summary>
+            Enumeration for text alignment
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.TextAlignment.Left">
+            <summary>
+            Left side
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.TextAlignment.Right">
+            <summary>
+            Right side
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.PaperSourceKindSelectionConverter">
+            <summary>
+            Type converter returning a specific collection.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperSourceKindSelectionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PaperSourceKindSelectionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperSourceKindSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> should be called to find a common set of values the object supports; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperSourceKindSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exclusive list of possible values, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exhaustive list of possible values; false if other values are possible.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PaperSourceKindSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+            </returns>
+        </member>
+        <member name="T:Codebasement.PrintControl.PrintDocumentSettings">
+            <summary>
+            PrintDocumentSettings
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PrintDocumentSettings"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentSettings.SetDefaults">
+            <summary>
+            Sets the defaults. Public access modifier for reset usage.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentSettings.FormatDateTime(System.DateTime)">
+            <summary>
+            Formats the date time to an unambiguous presentation.
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentSettings.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageSettings">
+            <summary>
+            Gets or sets the page settings.
+            </summary>
+            <value>The page settings.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageOrientation">
+            <summary>
+            Gets or sets the paper orientation.
+            </summary>
+            <value>The paper orientation.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.Duplex">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Codebasement.PrintControl.PrintDocumentSettings"/> is duplex.
+            </summary>
+            <value><c>true</c> if duplex; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.Copies">
+            <summary>
+            Gets or sets the copies.
+            </summary>
+            <value>The copies.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.Collate">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Codebasement.PrintControl.PrintDocumentSettings"/> is collate.
+            </summary>
+            <value><c>true</c> if collate; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PrintToFile">
+            <summary>
+            Gets or sets a value indicating whether [print to file].
+            </summary>
+            <value><c>true</c> if [print to file]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.OriginAtMargins">
+            <summary>
+            Gets or sets a value indicating whether [origin at margins].
+            </summary>
+            <value><c>true</c> if [origin at margins]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.Margins">
+            <summary>
+            Gets or sets the margins.
+            </summary>
+            <value>The margins.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.OverlapArea">
+            <summary>
+            Gets or sets the overlap area.
+            </summary>
+            <value>The overlap area.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.StretchToFit">
+            <summary>
+            Gets or sets a value indicating whether [stretch to fit].
+            </summary>
+            <value><c>true</c> if [stretch to fit]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PrintRange">
+            <summary>
+            Gets or sets the print range.
+            </summary>
+            <value>The print range.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.FromPage">
+            <summary>
+            Gets or sets the page to print from.
+            </summary>
+            <value>From page.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.ToPage">
+            <summary>
+            Gets or sets the page to print until (including).
+            </summary>
+            <value>To page.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.CurrentPage">
+            <summary>
+            Gets or sets the current page.
+            </summary>
+            <value>The current page.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.TotalPages">
+            <summary>
+            Gets or sets the total pages.
+            </summary>
+            <value>The total pages.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PrinterSettings">
+            <summary>
+            Gets or sets the printer settings.
+            </summary>
+            <value>The printer settings.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.DefaultPrinter">
+            <summary>
+            Gets the default printer.
+            </summary>
+            <value>The default printer.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.SelectedPrinter">
+            <summary>
+            Gets or sets the selected printer.
+            </summary>
+            <value>The selected printer.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PaperKind">
+            <summary>
+            Gets or sets the kind of the paper.
+            </summary>
+            <value>The kind of the paper.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PaperSourceKind">
+            <summary>
+            Gets or sets the kind of the paper source.
+            </summary>
+            <value>The kind of the paper source.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PrinterResolutionKind">
+            <summary>
+            Gets or sets the kind of the printer resolution.
+            </summary>
+            <value>The kind of the printer resolution.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.SupportsColour">
+            <summary>
+            Gets a value indicating whether [supports colour].
+            </summary>
+            <value><c>true</c> if [supports colour]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.CanDuplex">
+            <summary>
+            Gets a value indicating whether this instance can duplex.
+            </summary>
+            <value>
+            	<c>true</c> if this instance can duplex; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.IsPlotter">
+            <summary>
+            Gets a value indicating whether this instance is plotter.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is plotter; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.IsValid">
+            <summary>
+            Gets a value indicating whether this instance is valid.
+            </summary>
+            <value><c>true</c> if this instance is valid; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.HeaderText">
+            <summary>
+            Gets or sets the header text.
+            </summary>
+            <value>The header text.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.HeaderFont">
+            <summary>
+            Gets or sets the header font.
+            </summary>
+            <value>The header font.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.HeaderColor">
+            <summary>
+            Gets or sets the color of the header.
+            </summary>
+            <value>The color of the header.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageNumberPlacement">
+            <summary>
+            Gets or sets the page nr placement.
+            </summary>
+            <value>The page nr placement.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageNumberAlignment">
+            <summary>
+            Gets or sets the page nr alignment.
+            </summary>
+            <value>The page nr alignment.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageNumberFont">
+            <summary>
+            Gets or sets the page nr font.
+            </summary>
+            <value>The page nr font.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.PageNumberColor">
+            <summary>
+            Gets or sets the color of the page nr.
+            </summary>
+            <value>The color of the page nr.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.DatePlacement">
+            <summary>
+            Gets or sets the date placement.
+            </summary>
+            <value>The date placement.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.DateAlignment">
+            <summary>
+            Gets or sets the date alignment.
+            </summary>
+            <value>The date alignment.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.DateFont">
+            <summary>
+            Gets or sets the date font.
+            </summary>
+            <value>The date font.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.DateColor">
+            <summary>
+            Gets or sets the color of the date.
+            </summary>
+            <value>The color of the date.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.FooterText">
+            <summary>
+            Gets or sets the footer text.
+            </summary>
+            <value>The footer text.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.FooterFont">
+            <summary>
+            Gets or sets the footer font.
+            </summary>
+            <value>The footer font.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentSettings.FooterColor">
+            <summary>
+            Gets or sets the color of the footer.
+            </summary>
+            <value>The color of the footer.</value>
+        </member>
+        <member name="T:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter">
+            <summary>
+            Type converter returning a specific collection.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> should be called to find a common set of values the object supports; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exclusive list of possible values, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exhaustive list of possible values; false if other values are possible.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterResolutionKindSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+            </returns>
+        </member>
+        <member name="T:Codebasement.PrintControl.PrintDocumentComponent">
+            <summary>
+            PrintDocumentComponent
+            </summary>
+            <summary>
+            PrintDocumentComponent
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.PrintDocumentComponent.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.#ctor(System.Windows.Forms.Control,Codebasement.PrintControl.PrintDocumentSettings)">
+            <summary>
+            Intialize the component with the selected control
+            </summary>
+            <param name="controlToPrint">The control to print.</param>
+            <param name="printDocumentSettings">The print document settings.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.OnBeginPrint(System.Object,System.Drawing.Printing.PrintEventArgs)">
+            <summary>
+            Called when [begin print].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Drawing.Printing.PrintEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.OnPrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+            Handles the PrintPage event of the PrintDocumentComponent control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Drawing.Printing.PrintPageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.OnEndPrint(System.Object,System.Drawing.Printing.PrintEventArgs)">
+            <summary>
+            Called when [end print].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Drawing.Printing.PrintEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.GetBitmap">
+            <summary>
+            Draw the control fully to a bitmap and return it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentComponent.CalculateSize">
+            <summary>
+            Return the best size that fits the control
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentComponent.PrintWidth">
+            <summary>
+            The _width of the control to print. You can change this value if the automatically 
+            calculated _width does not fit all the elements of the control
+            </summary>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentComponent.PrintHeight">
+            <summary>
+            The _height of the control to print. You can change this value if the automatically
+            calculated _height does not fit all the elements of the control
+            </summary>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentComponent.PageTotal">
+            <summary>
+            Gets or sets the page total.
+            </summary>
+            <value>The page total.</value>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentComponent.OverlapArea">
+            <summary>
+            The area to be reprinted between pages if there are more than one
+            pages to be printed, to prevent data loss
+            </summary>
+        </member>
+        <member name="P:Codebasement.PrintControl.PrintDocumentComponent.StretchControl">
+            <summary>
+            Set true to _stretch the control to fill a single printed page
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.TextPlacement">
+            <summary>
+            Enumeration for text placement
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.TextPlacement.None">
+            <summary>
+            No placement
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.TextPlacement.Header">
+            <summary>
+            Header
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.TextPlacement.Footer">
+            <summary>
+            Footer
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.PrintDocumentControl">
+            <summary>
+            PrintDocumentControl
+            </summary>
+            <summary>
+            User control that contains all the visual functions of the combined printing utility.
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.PrintDocumentControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentControl.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PrintDocumentControl"/> class.
+            </summary>
+            <param name="controlToPrint">The control to print.</param>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrintDocumentControl.SetPreviewToolStrip">
+            <summary>
+            Sets the preview tool strip.
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.PageOrientation">
+            <summary>
+            Enumeration for the page orientation.
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.PageOrientation.Portrait">
+            <summary>
+            Portrait
+            </summary>
+        </member>
+        <member name="F:Codebasement.PrintControl.PageOrientation.Landscape">
+            <summary>
+            Landscape
+            </summary>
+        </member>
+        <member name="T:Codebasement.PrintControl.DuplexKindSelectionConverter">
+            <summary>
+            Type converter returning a specific collection.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.DuplexKindSelectionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.DuplexKindSelectionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.DuplexKindSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> should be called to find a common set of values the object supports; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.DuplexKindSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exclusive list of possible values, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exhaustive list of possible values; false if other values are possible.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.DuplexKindSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+            </returns>
+        </member>
+        <member name="T:Codebasement.PrintControl.PrinterSelectionConverter">
+            <summary>
+            Type converter returning a specific collection.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterSelectionConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codebasement.PrintControl.PrinterSelectionConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> should be called to find a common set of values the object supports; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether the collection of standard values returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exclusive list of possible values, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context.</param>
+            <returns>
+            true if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> returned from <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"></see> is an exhaustive list of possible values; false if other values are possible.
+            </returns>
+        </member>
+        <member name="M:Codebasement.PrintControl.PrinterSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be null.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"></see> that holds a standard set of valid values, or null if the data type does not support a standard set of values.
+            </returns>
+        </member>
+    </members>
+</doc>
